@@ -1,3 +1,4 @@
+import { CurrencyContext } from "@/store/store";
 import { Outlet, useLoaderData } from "react-router-dom";
 
 export default function CurrencyProvider() {
@@ -6,8 +7,8 @@ export default function CurrencyProvider() {
     console.log(data);
 
   return (
-    <div>
+    <CurrencyContext.Provider value={data}>
         <Outlet />
-    </div>
+    </CurrencyContext.Provider >
   )
 }
